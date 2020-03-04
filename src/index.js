@@ -1,12 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { render } from 'react-dom';
+import createStore from './store/creatStore';
+import { createBrowserHistory } from 'history';
+import ReactGA from 'react-ga';
+import App from './App'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactGA.initialize('UA-142874242-1');
+const history = createBrowserHistory({
+  basename: process.env.PUBLIC_URL,
+});
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+history.listen(({ pathname }) => {
+  ReactGA.set({ page: pathname });
+  ReactGA.pageview(pathname);
+});
+
+const store = createStore(history);
+
+render (
+  <App history={history} store={store}/>,
+  document.getElementById('root')
+);

@@ -1,0 +1,382 @@
+@use './mixin/_media.scss';
+@use './mixin/var';
+
+
+$small: var.$small;
+$middle: var.$middle;
+$big: var.$big;
+$max: var.$max;
+
+$brand-color: hsl(188.5, 100%, 40%, 1);
+
+@mixin setFooterHeight($main,$links,$cr){
+  height: $main + $links + $cr;
+  .footer-main {
+    height: $main;
+  }
+  .footer-links {
+    height: $links;
+  }
+  .copyright {
+    height: $cr;
+  }
+}
+
+.body{
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  p{
+    margin-top: 1rem;
+  }
+
+  .title {
+    padding: 20px 0px 0px;
+    font-family: "Josefin Sans","游ゴシック体",Yu Gothic,YuGothic,"ヒラギノ角ゴ Pro",Hiragino Kaku Gothic Pro,"メイリオ",Meiryo,sans-serif !important;
+    & > *{
+      font-family: "Josefin Sans","游ゴシック体",Yu Gothic,YuGothic,"ヒラギノ角ゴ Pro",Hiragino Kaku Gothic Pro,"メイリオ",Meiryo,sans-serif;
+    }
+    text-align: center;
+  }
+
+  .list{
+    position: relative;
+    padding-left: 1rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+  }
+
+  .beforeLi {
+    display: inline-block;
+    .listBar {
+      position: absolute;
+      top: .75rem;
+      left: 0;
+      background-color: $brand-color;
+      width: .5rem;
+      height: 2px;
+      transform: translateY(-50%);
+    }
+    
+  }
+
+
+  .navbar {
+    .navbar-brand {
+      height: 2rem;
+      img {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+    .navbar-brand :hover {
+      cursor: pointer;
+    }
+    .navbar-nav{
+      .nav-link{
+        font-family: "Josefin Sans","游ゴシック体",Yu Gothic,YuGothic,"ヒラギノ角ゴ Pro",Hiragino Kaku Gothic Pro,"メイリオ",Meiryo,sans-serif !important;
+      }
+    }
+  }
+
+  .main{
+    flex: 1;
+    font-family: "Avenir-Light","游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic",sans-serif;
+    h1,h2,h3,h4,h5,h6 {
+      font-family: "Josefin Sans","游ゴシック体",Yu Gothic,YuGothic,"ヒラギノ角ゴ Pro",Hiragino Kaku Gothic Pro,"メイリオ",Meiryo,sans-serif !important;
+      text-align: center;
+    }
+    img {
+      vertical-align: middle;
+      max-width: 100%;
+    }
+    padding-bottom: 20px;
+    padding-left: 3px;
+    padding-right: 3px;
+
+    @include media.mediamin($small){
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    :not(.tiltle) > b, strong, .bold{
+     font-family: "Avenir-Light","游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic",sans-serif;
+    }
+
+    button.link-button{
+      color: hsla(188.9, 100%, 35.1%, 1) !important;
+      background: none;
+      border: none;
+      border-bottom: 1px solid;
+      outline: 0;
+      &:hover {
+        cursor: pointer;
+        outline: 0;
+      }
+    }
+
+    button.back-button{
+      color: $brand-color !important;
+      background: none;
+      border: none;
+      border-bottom: 1px solid #5f9dda !important;
+      outline: 0;
+      &:hover {
+        cursor: pointer;
+        outline: 0;
+      }
+    }
+
+    .about{
+      .aboutTop{
+        p{
+          text-align: center;
+          font-size: 1.3em;
+          line-height: 1.5em;
+        }
+      }
+
+      @include media.mediaminmax($middle,$big){
+        font-size: 1.2em;
+        .aboutTop{
+          p{
+            font-size: 1.5em;
+          }
+        }
+      }
+
+      @include media.mediamin($big){
+        font-size: 1.3em;
+        .aboutTop{
+          p{
+            font-size: 1.7em;
+          }
+        }
+      }
+    }
+
+    .contact-form {
+      input,textarea{
+        display: block;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top : 10px;
+        margin-bottom : 30px;
+        padding : 18px;
+        font-size : 18px;
+        border : 1px solid #dee7ec;
+      }
+      textarea{
+        height: 150px;
+      }
+      .submit{
+        background-color : $brand-color;
+        color : white;
+        transition: .3s ease;
+        &:hover{
+          background-color : #b7d4e4;
+          color: rgb(136, 86, 223);
+          cursor: pointer;
+        }
+      }
+
+      @include media.mediamin($middle){
+        input,textarea {
+          width : 400px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        @include media.mediamin($middle){
+          p{
+            width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+    }
+
+    .introduction {
+    
+        margin: 0 20px;
+    
+
+      @include media.mediamin($max){
+        .introductionTop{
+          display: grid;
+          grid-template-columns: 15rem auto;
+          column-gap: 2.25rem;
+          & > *{
+            align-self: center;
+          }
+          h2,h3,h4,h5,h6{
+            text-align: left !important;
+          }
+        }
+      }
+
+      .portrait{
+        display: block;
+        width: 15rem;
+        height: 15rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .careerWrapper{
+        h2,h3,h4,h5,h6{
+          color: white;
+          padding-top: 10px;
+        }
+        background-color: $brand-color;
+
+        .career {
+          display: block;
+          max-width: 600px;
+          border-left: solid 10px white;
+          border-right: solid 10px white;
+      
+          
+          ul {
+            padding-left: 0;
+            background-color: white;
+            list-style: none;
+            li {
+              list-style: none;
+            }
+          }
+        }
+
+        @include media.mediamin(616px){
+          max-width: 616px;
+          margin-left: auto;
+          margin-right: auto;
+          height: 410px;
+          
+          .career{
+            margin-left: 8px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            background-color: $brand-color;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+footer {
+  $main : 0px;
+  $links : 158px;
+  $cr : 22px;
+
+  @include setFooterHeight($main,$links,$cr);
+
+  background-color: #000;
+  align-items: flex-start;
+  display: flex;
+  flex-flow: column;
+  color: #fff;
+  width: 100%;
+  line-height: 1.625rem;
+
+  .footer-main {
+    margin-left: 50px;
+    .title{
+      h2{
+        font-family: "Josefin Sans","游ゴシック体",Yu Gothic,YuGothic,"ヒラギノ角ゴ Pro",Hiragino Kaku Gothic Pro,"メイリオ",Meiryo,sans-serif !important;
+      }
+    }
+    width: auto;
+  }
+
+  .footer-links {
+    width: 100%;
+    text-align: center;
+
+    img {
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: 20px;
+      margin-bottom: 10px;
+      height: 40px;
+      width: auto;
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
+    ul {
+      list-style: none;
+      display: grid;
+      justify-content: center;
+      grid-template-columns:  repeat(2,100px);
+      grid-template-rows: auto;
+      grid-column-gap: 70px;
+      grid-row-gap: 10px;
+      grid-auto-flow: row;
+      padding-inline-start: 0px;
+      margin: 10px 0;
+
+      &>*{
+        font-family: "Josefin Sans","游ゴシック体",Yu Gothic,YuGothic,"ヒラギノ角ゴ Pro",Hiragino Kaku Gothic Pro,"メイリオ",Meiryo,sans-serif !important;
+        cursor: pointer;
+        display: inline-block;
+        border-bottom: 1px solid white;
+      }
+    }
+  }
+
+  .copyright {
+    clear: both;
+    width: 100%;
+    color: #fff;
+    line-height: $cr;
+    font-size: 0.7em;
+    text-align: center;
+    p {
+      float: left;
+      margin: 0 0 0 10px;
+    }
+  }
+
+  @include media.mediaminmax($small,$middle){
+    $links: 115px;
+    @include setFooterHeight($main,$links,$cr);
+    .footer-links ul {
+      grid-template-columns: repeat(3,100px);
+    }
+  }
+  // @include media.mediaminmax($middle,$big){
+  //   $links: 148px;
+  //   @include setFooterHeight($main,$links,$cr);
+  //   .footer-links ul {
+  //     grid-template-columns: repeat(4, 100px);
+  //   }
+  // }
+  // @include media.mediaminmax($big,$max){
+  //   $links: 148px;
+  //   @include setFooterHeight($main,$links,$cr);
+  //   .footer-links ul {
+  //     grid-template-columns: repeat(5, 100px);
+  //   }
+  // }
+  @include media.mediamin($middle){
+    $links: 105px;
+    @include setFooterHeight($main,$links,$cr);
+    .footer-links ul{
+      display: flex;
+      margin: 0px 20px 10px 20px;
+      &> *{
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@use '../../scss/mixin/_media.scss';
+@use '../../scss/mixin/var';
+
+$small : var.$small;
+
+.member{
+  h1,h2,h3,h4,h5,h6 {
+    text-align: left !important;
+  }
+  .memberHeader {
+    .title {
+      display: inline-block;
+    }
+    .userContent {
+      float: right;
+      padding: 0;
+
+      & > .userName{
+        float: right;
+        text-align: center;
+        margin: 20px 12px 1px 10px ;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      & > button{
+        float: right;
+        text-align: center;
+        margin: 10px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      @include media.mediamin($small){
+        .br {
+          display: none;
+        }
+        & > .userName{
+          display: inline;
+          text-align: center;
+          margin: 20px 12px 12px 10px ;
+          text-decoration: none;
+          font-size: 18px;
+        }
+
+        & > button{
+          float: left;
+          text-align: center;
+          margin: 12px;
+          text-decoration: none;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

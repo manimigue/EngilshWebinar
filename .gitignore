@@ -17,6 +17,10 @@
 .env.development.local
 .env.test.local
 .env.production.local
+/.sass-cache
+/.log/log.pem
+/.log/.dec
+/.log/get_log.sh
 
 npm-debug.log*
 yarn-debug.log*

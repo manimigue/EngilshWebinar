@@ -1,13 +1,327 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@charset "UTF-8";
+.body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.body p {
+  margin-top: 1rem;
+}
+.body .title {
+  padding: 20px 0px 0px;
+  font-family: "Josefin Sans", "游ゴシック体", Yu Gothic, YuGothic, "ヒラギノ角ゴ Pro", Hiragino Kaku Gothic Pro, "メイリオ", Meiryo, sans-serif !important;
+  text-align: center;
+}
+.body .title > * {
+  font-family: "Josefin Sans", "游ゴシック体", Yu Gothic, YuGothic, "ヒラギノ角ゴ Pro", Hiragino Kaku Gothic Pro, "メイリオ", Meiryo, sans-serif;
+}
+.body .list {
+  position: relative;
+  padding-left: 1rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+.body .beforeLi {
+  display: inline-block;
+}
+.body .beforeLi .listBar {
+  position: absolute;
+  top: 0.75rem;
+  left: 0;
+  background-color: #00afcc;
+  width: 0.5rem;
+  height: 2px;
+  transform: translateY(-50%);
+}
+.body .navbar .navbar-brand {
+  height: 2rem;
+}
+.body .navbar .navbar-brand img {
+  height: 2rem;
+  width: 2rem;
+}
+.body .navbar .navbar-brand :hover {
+  cursor: pointer;
+}
+.body .navbar .navbar-nav .nav-link {
+  font-family: "Josefin Sans", "游ゴシック体", Yu Gothic, YuGothic, "ヒラギノ角ゴ Pro", Hiragino Kaku Gothic Pro, "メイリオ", Meiryo, sans-serif !important;
+}
+.body .main {
+  flex: 1;
+  font-family: "Avenir-Light", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  padding-bottom: 20px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.body .main h1, .body .main h2, .body .main h3, .body .main h4, .body .main h5, .body .main h6 {
+  font-family: "Josefin Sans", "游ゴシック体", Yu Gothic, YuGothic, "ヒラギノ角ゴ Pro", Hiragino Kaku Gothic Pro, "メイリオ", Meiryo, sans-serif !important;
+  text-align: center;
+}
+.body .main img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+@media only screen and (min-width: 460px) {
+  .body .main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+.body .main :not(.tiltle) > b, .body .main strong, .body .main .bold {
+  font-family: "Avenir-Light", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+}
+.body .main button.link-button {
+  color: #0098b3 !important;
+  background: none;
+  border: none;
+  border-bottom: 1px solid;
+  outline: 0;
+}
+.body .main button.link-button:hover {
+  cursor: pointer;
+  outline: 0;
+}
+.body .main button.back-button {
+  color: #00afcc !important;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #5f9dda !important;
+  outline: 0;
+}
+.body .main button.back-button:hover {
+  cursor: pointer;
+  outline: 0;
+}
+.body .main .about .aboutTop p {
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+@media only screen and (min-width: 732px) and (max-width: 850px) {
+  .body .main .about {
+    font-size: 1.2em;
+  }
+  .body .main .about .aboutTop p {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (min-width: 850px) {
+  .body .main .about {
+    font-size: 1.3em;
+  }
+  .body .main .about .aboutTop p {
+    font-size: 1.7em;
+  }
+}
+.body .main .contact-form input, .body .main .contact-form textarea {
+  display: block;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 18px;
+  font-size: 18px;
+  border: 1px solid #dee7ec;
+}
+.body .main .contact-form textarea {
+  height: 150px;
+}
+.body .main .contact-form .submit {
+  background-color: #00afcc;
+  color: white;
+  transition: 0.3s ease;
+}
+.body .main .contact-form .submit:hover {
+  background-color: #b7d4e4;
+  color: #8856df;
+  cursor: pointer;
+}
+@media only screen and (min-width: 732px) {
+  .body .main .contact-form input, .body .main .contact-form textarea {
+    width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media only screen and (min-width: 732px) and (min-width: 732px) {
+  .body .main .contact-form p {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.body .main .introduction {
+  margin: 0 20px;
+}
+@media only screen and (min-width: 1018px) {
+  .body .main .introduction .introductionTop {
+    display: grid;
+    grid-template-columns: 15rem auto;
+    column-gap: 2.25rem;
+  }
+  .body .main .introduction .introductionTop > * {
+    align-self: center;
+  }
+  .body .main .introduction .introductionTop h2, .body .main .introduction .introductionTop h3, .body .main .introduction .introductionTop h4, .body .main .introduction .introductionTop h5, .body .main .introduction .introductionTop h6 {
+    text-align: left !important;
+  }
+}
+.body .main .introduction .portrait {
+  display: block;
+  width: 15rem;
+  height: 15rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.body .main .introduction .careerWrapper {
+  background-color: #00afcc;
+}
+.body .main .introduction .careerWrapper h2, .body .main .introduction .careerWrapper h3, .body .main .introduction .careerWrapper h4, .body .main .introduction .careerWrapper h5, .body .main .introduction .careerWrapper h6 {
+  color: white;
+  padding-top: 10px;
+}
+.body .main .introduction .careerWrapper .career {
+  display: block;
+  max-width: 600px;
+  border-left: solid 10px white;
+  border-right: solid 10px white;
+}
+.body .main .introduction .careerWrapper .career ul {
+  padding-left: 0;
+  background-color: white;
+  list-style: none;
+}
+.body .main .introduction .careerWrapper .career ul li {
+  list-style: none;
+}
+@media only screen and (min-width: 616px) {
+  .body .main .introduction .careerWrapper {
+    max-width: 616px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 410px;
+  }
+  .body .main .introduction .careerWrapper .career {
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    background-color: #00afcc;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+footer {
+  height: 180px;
+  background-color: #000;
+  align-items: flex-start;
+  display: flex;
+  flex-flow: column;
+  color: #fff;
+  width: 100%;
+  line-height: 1.625rem;
 }
+footer .footer-main {
+  height: 0px;
+}
+footer .footer-links {
+  height: 158px;
+}
+footer .copyright {
+  height: 22px;
+}
+footer .footer-main {
+  margin-left: 50px;
+  width: auto;
+}
+footer .footer-main .title h2 {
+  font-family: "Josefin Sans", "游ゴシック体", Yu Gothic, YuGothic, "ヒラギノ角ゴ Pro", Hiragino Kaku Gothic Pro, "メイリオ", Meiryo, sans-serif !important;
+}
+footer .footer-links {
+  width: 100%;
+  text-align: center;
+}
+footer .footer-links img {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  height: 40px;
+  width: auto;
+}
+footer .footer-links img:hover {
+  cursor: pointer;
+}
+footer .footer-links ul {
+  list-style: none;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 100px);
+  grid-template-rows: auto;
+  grid-column-gap: 70px;
+  grid-row-gap: 10px;
+  grid-auto-flow: row;
+  padding-inline-start: 0px;
+  margin: 10px 0;
+}
+footer .footer-links ul > * {
+  font-family: "Josefin Sans", "游ゴシック体", Yu Gothic, YuGothic, "ヒラギノ角ゴ Pro", Hiragino Kaku Gothic Pro, "メイリオ", Meiryo, sans-serif !important;
+  cursor: pointer;
+  display: inline-block;
+  border-bottom: 1px solid white;
+}
+footer .copyright {
+  clear: both;
+  width: 100%;
+  color: #fff;
+  line-height: 22px;
+  font-size: 0.7em;
+  text-align: center;
+}
+footer .copyright p {
+  float: left;
+  margin: 0 0 0 10px;
+}
+@media only screen and (min-width: 460px) and (max-width: 732px) {
+  footer {
+    height: 137px;
+  }
+  footer .footer-main {
+    height: 0px;
+  }
+  footer .footer-links {
+    height: 115px;
+  }
+  footer .copyright {
+    height: 22px;
+  }
+  footer .footer-links ul {
+    grid-template-columns: repeat(3, 100px);
+  }
+}
+@media only screen and (min-width: 732px) {
+  footer {
+    height: 127px;
+  }
+  footer .footer-main {
+    height: 0px;
+  }
+  footer .footer-links {
+    height: 105px;
+  }
+  footer .copyright {
+    height: 22px;
+  }
+  footer .footer-links ul {
+    display: flex;
+    margin: 0px 20px 10px 20px;
+  }
+  footer .footer-links ul > * {
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

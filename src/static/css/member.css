@@ -1,0 +1,45 @@
+.member h1, .member h2, .member h3, .member h4, .member h5, .member h6 {
+  text-align: left !important;
+}
+.member .memberHeader .title {
+  display: inline-block;
+}
+.member .memberHeader .userContent {
+  float: right;
+  padding: 0;
+}
+.member .memberHeader .userContent > .userName {
+  float: right;
+  text-align: center;
+  margin: 20px 12px 1px 10px;
+  text-decoration: none;
+  font-size: 18px;
+}
+.member .memberHeader .userContent > button {
+  float: right;
+  text-align: center;
+  margin: 10px;
+  text-decoration: none;
+  font-size: 18px;
+}
+@media only screen and (min-width: 460px) {
+  .member .memberHeader .userContent .br {
+    display: none;
+  }
+  .member .memberHeader .userContent > .userName {
+    display: inline;
+    text-align: center;
+    margin: 20px 12px 12px 10px;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  .member .memberHeader .userContent > button {
+    float: left;
+    text-align: center;
+    margin: 12px;
+    text-decoration: none;
+    font-size: 18px;
+  }
+}
+
+/*# sourceMappingURL=member.css.map */

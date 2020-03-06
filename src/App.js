@@ -38,7 +38,7 @@ class App extends Component {
           <Security
             issuer='https://dev-286685.okta.com/oauth2/default'
             clientId='0oa305aw9hqfQoLOe357'
-            redirectUri={window.location.origin + '/implicit/callback'}
+            redirectUri={window.location.origin + '/EnglishWebinar/implicit/callback'}
             onAuthRequired={onAuthRequired}
             pkce={true}
              >
@@ -48,9 +48,9 @@ class App extends Component {
                 <Route exact path='/' component={Land} />
                 <Route exact path='/tickets' component={Tickets} />
                 <Route exact path='/contact' component={Contact} />
-                <SecureRoute exact path='/member' component={Member} />
                 <Route path='/login' render={() => <Login baseUrl='https://dev-286685.okta.com' />} />
                 <Route path='/implicit/callback' component={ImplicitCallback} />
+                <SecureRoute exact path='/member' component={Member} />
               </div>
               <Footer /> 
             </div>

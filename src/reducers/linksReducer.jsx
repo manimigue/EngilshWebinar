@@ -2,18 +2,23 @@ const initialState = {
   headerLinks:[
     {
       type: 'Route',
+      url : '/tickets',
+      text : 'チケット'
+    },
+    {
+      type: 'Route',
       url : '/contact',
-      text : 'Contact'
+      text : 'お問い合わせ'
     },
     {
       type: 'Route',
       url : '/member',
-      text : 'Member'
+      text : 'メンバーページ'
     },
     {
       type: 'Route',
       url : '/',
-      text : 'Home'
+      text : 'ホーム'
     }
   ]
 };

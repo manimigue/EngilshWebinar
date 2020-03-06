@@ -1,12 +1,14 @@
 import React from 'react'
+import useWindowSize from '../../hooks/windowSize'
 
 const Attendance = (props) => {
+  const size = useWindowSize();
   return (
     <React.Fragment>
       <h4>出欠</h4>
       <iframe
         title="Attendance spreadsheet"
-        width="500"
+        width={size.width - 20}
         height="500"
         widget='false'
         frameBorder="0"

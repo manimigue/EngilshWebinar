@@ -12,6 +12,7 @@ import Member from './components/Member';
 import Footer from './components/Footer';
 
 import './index.css';
+import Tickets from './components/Tickets';
 
 function onAuthRequired({history}) {
   history.push('/login');
@@ -45,6 +46,7 @@ class App extends Component {
               <Header /> 
               <div className='main'>
                 <Route exact path='/' component={Land} />
+                <Route exact path='/tickets' component={Tickets} />
                 <Route exact path='/contact' component={Contact} />
                 <SecureRoute exact path='/member' component={Member} />
                 <Route path='/login' render={() => <Login baseUrl='https://dev-286685.okta.com' />} />

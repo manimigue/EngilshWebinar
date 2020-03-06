@@ -5,7 +5,7 @@ import { createBrowserHistory } from 'history';
 import ReactGA from 'react-ga';
 import App from './App'
 
-ReactGA.initialize('UA-142874242-1');
+ReactGA.initialize('UA-159904036-1');
 const history = createBrowserHistory({
   basename: process.env.PUBLIC_URL,
 });

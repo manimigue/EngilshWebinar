@@ -6,7 +6,7 @@ class Contact extends Component {
   }
 
   render(){
-    const mail = "manimigue0701@gmail.com";
+    const mail = "info@lilys-transupport.jp";
     return (
       <div className="contact-form">
         <h2 className="title">Contact</h2>
@@ -16,7 +16,7 @@ class Contact extends Component {
             <p>メールアドレス</p>
             <input type="email" name="返信先" placeholder="you@example.com"/>
             <p>電話番号</p>
-            <input type="tel" name="電話番号" placeholder="0123456789" />
+            <input type="tel" name="電話番号" placeholder="09012345678" />
             <p>お問い合わせ内容</p>
             <textarea name='お問い合わせ内容'></textarea>
             <input className='submit' type="submit" value='Send'/>

@@ -26,7 +26,7 @@ class Header extends Component {
       return (
         <Nav.Link
           key={link.text}
-          onClick={() => {this.props.linkToPage(link.type,link.url)}}
+          onClick={() => {this.props.linkToPage(link.type,link.url);this.closeNav()}}
           >{link.text}
         </Nav.Link>
       );
@@ -34,13 +34,15 @@ class Header extends Component {
     return (
       <Navbar
         collapseOnSelect
-        expand="sm"
+        expand="md"
         bg='white'
         variant="light"
         onToggle={this.setNavExpanded}
+        expanded={this.state.navExpanded}
       >
         <Navbar.Brand href="">
           <img src={WhiteLogo} alt='HeaderLogo' onClick={() => this.props.linkToPage('Route','/')}/>
+          <span style={{paddingLeft : "5px"}}>Lily's English Webinar</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">

@@ -36,6 +36,7 @@
 }
 .body .navbar .navbar-brand {
   height: 2rem;
+  box-sizing: content-box;
 }
 .body .navbar .navbar-brand img {
   height: 2rem;
@@ -46,6 +47,13 @@
 }
 .body .navbar .navbar-nav .nav-link {
   font-family: "Josefin Sans", "游ゴシック体", Yu Gothic, YuGothic, "ヒラギノ角ゴ Pro", Hiragino Kaku Gothic Pro, "メイリオ", Meiryo, sans-serif !important;
+  color: #003741;
+}
+@media only screen and (min-width: 768px) {
+  .body .navbar .navbar-nav .nav-link {
+    padding-right: 0.8rem;
+    padding-left: 0.8rem;
+  }
 }
 .body .main {
   flex: 1;
@@ -57,6 +65,14 @@
 .body .main h1, .body .main h2, .body .main h3, .body .main h4, .body .main h5, .body .main h6 {
   font-family: "Josefin Sans", "游ゴシック体", Yu Gothic, YuGothic, "ヒラギノ角ゴ Pro", Hiragino Kaku Gothic Pro, "メイリオ", Meiryo, sans-serif !important;
   text-align: center;
+}
+.body .main ul {
+  padding-left: 0;
+  background-color: white;
+  list-style: none;
+}
+.body .main ul li {
+  list-style: none;
 }
 .body .main img {
   vertical-align: middle;
@@ -72,15 +88,17 @@
   font-family: "Avenir-Light", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
 }
 .body .main button.link-button {
-  color: #0098b3 !important;
+  color: #00afcc;
   background: none;
   border: none;
   border-bottom: 1px solid;
   outline: 0;
+  transition: 0.3s ease;
 }
 .body .main button.link-button:hover {
   cursor: pointer;
   outline: 0;
+  color: #003741;
 }
 .body .main button.back-button {
   color: #00afcc !important;
@@ -93,25 +111,145 @@
   cursor: pointer;
   outline: 0;
 }
-.body .main .about .aboutTop p {
-  text-align: center;
-  font-size: 1.3em;
-  line-height: 1.5em;
+.body .main button.apply-button {
+  display: block;
+  background: #00afcc;
+  border: none;
+  outline: 0;
+  width: 80%;
+  height: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.3s ease;
+}
+.body .main button.apply-button a {
+  color: white !important;
+  transition: 0.3s ease;
+}
+@media only screen and (min-width: 460px) {
+  .body .main button.apply-button {
+    width: 400px;
+  }
+}
+.body .main button.apply-button:hover {
+  background-color: #0099b3;
+  cursor: pointer;
+  outline: 0;
+}
+.body .main button.apply-button:hover a {
+  text-decoration: underline;
+}
+.body .main button.apply-button:active {
+  background-color: #008399;
+}
+.body .main .about {
+  margin: 5px 0 50px;
 }
 @media only screen and (min-width: 732px) and (max-width: 850px) {
   .body .main .about {
     font-size: 1.2em;
-  }
-  .body .main .about .aboutTop p {
-    font-size: 1.5em;
   }
 }
 @media only screen and (min-width: 850px) {
   .body .main .about {
     font-size: 1.3em;
   }
+}
+.body .main .about .aboutTop {
+  color: white;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  background-color: #00afcc;
+  background-image: linear-gradient(120deg, #00afcc 0%, #006d80 100%);
+}
+.body .main .about .aboutTop p {
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+@media only screen and (min-width: 732px) and (max-width: 850px) {
+  .body .main .about .aboutTop p {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (min-width: 850px) {
   .body .main .about .aboutTop p {
     font-size: 1.7em;
+  }
+}
+.body .main .about .aboutType h2, .body .main .about .aboutType h3, .body .main .about .aboutType h4, .body .main .about .aboutType h5, .body .main .about .aboutType h6 {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-color: #00afcc;
+}
+.body .main .about .aboutType ul {
+  font-size: 1.05em;
+  padding-left: 4px;
+}
+@media only screen and (min-width: 732px) and (max-width: 850px) {
+  .body .main .about .aboutType ul {
+    font-size: 1.1em;
+  }
+}
+@media only screen and (min-width: 850px) {
+  .body .main .about .aboutType ul {
+    font-size: 1.2em;
+  }
+}
+@media only screen and (min-width: 1018px) {
+  .body .main .about .aboutType ul {
+    display: block;
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.body .main .about .aboutHowto h4.subTitle {
+  margin: 1em;
+  font-size: 1em;
+  text-align: left;
+}
+@media only screen and (min-width: 510px) {
+  .body .main .about .aboutHowto h4.subTitle {
+    margin: 1em 0;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 732px) {
+  .body .main .about .aboutHowto h4.subTitle {
+    font-size: 1.4rem;
+  }
+}
+.body .main .about .aboutHowto h4.subTitle span.hide500 {
+  display: none;
+}
+@media only screen and (min-width: 510px) {
+  .body .main .about .aboutHowto h4.subTitle span.hide500 {
+    display: inline;
+  }
+}
+.body .main .about .aboutHowto ol {
+  padding-inline-start: 30px;
+  padding-right: 1em;
+}
+@media only screen and (min-width: 1018px) {
+  .body .main .about .aboutHowto ol {
+    display: block;
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.body .main .about .aboutTicket p {
+  line-height: 1.8em;
+  margin-left: 0.2em;
+}
+@media only screen and (min-width: 1018px) {
+  .body .main .about .aboutTicket p {
+    display: block;
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .body .main .contact-form input, .body .main .contact-form textarea {
@@ -134,8 +272,7 @@
   transition: 0.3s ease;
 }
 .body .main .contact-form .submit:hover {
-  background-color: #b7d4e4;
-  color: #8856df;
+  background-color: #0099b3;
   cursor: pointer;
 }
 @media only screen and (min-width: 732px) {
@@ -145,8 +282,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-}
-@media only screen and (min-width: 732px) and (min-width: 732px) {
   .body .main .contact-form p {
     width: 600px;
     margin-left: auto;
@@ -175,6 +310,7 @@
   height: 15rem;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1em;
 }
 .body .main .introduction .careerWrapper {
   background-color: #00afcc;
@@ -189,14 +325,6 @@
   border-left: solid 10px white;
   border-right: solid 10px white;
 }
-.body .main .introduction .careerWrapper .career ul {
-  padding-left: 0;
-  background-color: white;
-  list-style: none;
-}
-.body .main .introduction .careerWrapper .career ul li {
-  list-style: none;
-}
 @media only screen and (min-width: 616px) {
   .body .main .introduction .careerWrapper {
     max-width: 616px;
@@ -209,6 +337,72 @@
     margin-right: 8px;
     margin-bottom: 8px;
     background-color: #00afcc;
+  }
+}
+.body .main .details {
+  margin: 10px 0.5em;
+  line-height: 2em;
+}
+.body .main .details h3, .body .main .details h4, .body .main .details h5, .body .main .details h6 {
+  text-align: left;
+}
+.body .main .details p {
+  line-height: 1.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+@media only screen and (min-width: 1018px) {
+  .body .main .details {
+    display: block;
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.body .main .tickets .tickets-form button {
+  margin: 3px;
+  margin-top: 5px;
+}
+.body .main .tickets .tickets-form p {
+  margin-top: 20px;
+}
+.body .main .tickets .tickets-form input, .body .main .tickets .tickets-form textarea {
+  display: block;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 18px;
+  font-size: 18px;
+  border: 1px solid #dee7ec;
+}
+.body .main .tickets .tickets-form select {
+  display: block;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.body .main .tickets .tickets-form .submit {
+  background-color: #00afcc;
+  color: white;
+  transition: 0.3s ease;
+}
+.body .main .tickets .tickets-form .submit:hover {
+  background-color: #0099b3;
+  cursor: pointer;
+}
+@media only screen and (min-width: 732px) {
+  .body .main .tickets .tickets-form input, .body .main .tickets .tickets-form textarea, .body .main .tickets .tickets-form select {
+    width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .body .main .tickets .tickets-form p {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -257,15 +451,16 @@ footer .footer-links ul {
   list-style: none;
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(2, 100px);
+  grid-template-columns: repeat(2, 120px);
   grid-template-rows: auto;
-  grid-column-gap: 70px;
+  grid-column-gap: 30px;
   grid-row-gap: 10px;
   grid-auto-flow: row;
   padding-inline-start: 0px;
   margin: 10px 0;
 }
 footer .footer-links ul > * {
+  width: 120px;
   font-family: "Josefin Sans", "游ゴシック体", Yu Gothic, YuGothic, "ヒラギノ角ゴ Pro", Hiragino Kaku Gothic Pro, "メイリオ", Meiryo, sans-serif !important;
   cursor: pointer;
   display: inline-block;
@@ -283,7 +478,12 @@ footer .copyright p {
   float: left;
   margin: 0 0 0 10px;
 }
-@media only screen and (min-width: 460px) and (max-width: 732px) {
+@media only screen and (min-width: 460px) {
+  footer .footer-links ul {
+    grid-column-gap: 70px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 732px) {
   footer {
     height: 137px;
   }
@@ -297,7 +497,7 @@ footer .copyright p {
     height: 22px;
   }
   footer .footer-links ul {
-    grid-template-columns: repeat(3, 100px);
+    grid-template-columns: repeat(3, 120px);
   }
 }
 @media only screen and (min-width: 732px) {
@@ -318,7 +518,6 @@ footer .copyright p {
     margin: 0px 20px 10px 20px;
   }
   footer .footer-links ul > * {
-    width: 100px;
     margin-left: auto;
     margin-right: auto;
   }

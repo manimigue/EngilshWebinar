@@ -7,7 +7,14 @@ $middle: var.$middle;
 $big: var.$big;
 $max: var.$max;
 
+$sm: var.$sm;
+$md: var.$md;
+
 $brand-color: hsl(188.5, 100%, 40%, 1);
+$brand-color-action: hsla(188.5, 100%, 35%, 1);
+$brand-color-active: hsla(188.5, 100%, 30%, 1);
+$brand-color-dark: hsla(188.9, 100%, 25.1%, 1);
+$brand-color-black: rgb(0, 55, 65);
 
 @mixin setFooterHeight($main,$links,$cr){
   height: $main + $links + $cr;
@@ -66,6 +73,7 @@ $brand-color: hsl(188.5, 100%, 40%, 1);
   .navbar {
     .navbar-brand {
       height: 2rem;
+      box-sizing: content-box;
       img {
         height: 2rem;
         width: 2rem;
@@ -77,6 +85,11 @@ $brand-color: hsl(188.5, 100%, 40%, 1);
     .navbar-nav{
       .nav-link{
         font-family: "Josefin Sans","游ゴシック体",Yu Gothic,YuGothic,"ヒラギノ角ゴ Pro",Hiragino Kaku Gothic Pro,"メイリオ",Meiryo,sans-serif !important;
+        color: $brand-color-black;
+        @include media.mediamin($md){
+          padding-right: .8rem;
+          padding-left: .8rem;
+        }
       }
     }
   }
@@ -87,6 +100,14 @@ $brand-color: hsl(188.5, 100%, 40%, 1);
     h1,h2,h3,h4,h5,h6 {
       font-family: "Josefin Sans","游ゴシック体",Yu Gothic,YuGothic,"ヒラギノ角ゴ Pro",Hiragino Kaku Gothic Pro,"メイリオ",Meiryo,sans-serif !important;
       text-align: center;
+    }
+    ul{
+      padding-left: 0;
+      background-color: white;
+      list-style: none;
+      li {
+        list-style: none;
+      }
     }
     img {
       vertical-align: middle;
@@ -105,53 +126,159 @@ $brand-color: hsl(188.5, 100%, 40%, 1);
      font-family: "Avenir-Light","游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic",sans-serif;
     }
 
-    button.link-button{
-      color: hsla(188.9, 100%, 35.1%, 1) !important;
-      background: none;
-      border: none;
-      border-bottom: 1px solid;
-      outline: 0;
-      &:hover {
-        cursor: pointer;
+    button{
+      &.link-button{
+        color: $brand-color;
+        background: none;
+        border: none;
+        border-bottom: 1px solid;
         outline: 0;
+        transition: .3s ease;
+        &:hover {
+          cursor: pointer;
+          outline: 0;
+          color: $brand-color-black;
+        }
       }
-    }
 
-    button.back-button{
-      color: $brand-color !important;
-      background: none;
-      border: none;
-      border-bottom: 1px solid #5f9dda !important;
-      outline: 0;
-      &:hover {
-        cursor: pointer;
+      &.back-button{
+        color: $brand-color !important;
+        background: none;
+        border: none;
+        border-bottom: 1px solid #5f9dda !important;
         outline: 0;
+        &:hover {
+          cursor: pointer;
+          outline: 0;
+        }
       }
+
+      &.apply-button{
+        display: block;
+        background: $brand-color;
+        border: none;
+        outline: 0;
+        width: 80%;
+        height: 3rem;
+        margin-left: auto;
+        margin-right: auto;
+        transition: .3s ease;
+        a {
+          color: white !important;
+          transition: .3s ease;
+        }
+        @include media.mediamin($small){
+          width: 400px;
+        }
+        &:hover {
+          background-color: $brand-color-action;
+          cursor: pointer;
+          outline: 0;
+          a {
+            text-decoration: underline;
+          }
+        }
+        &:active{
+          background-color: $brand-color-active;
+        }
+      }      
     }
 
     .about{
+      $middle-size : 1.2em;
+      $big-size : 1.3em;
+      @include media.mediaminmax($middle,$big){
+        font-size: $middle-size;
+      }
+      @include media.mediamin($big){
+        font-size: $big-size;
+      }
+
+      margin: 5px 0 50px;
+
       .aboutTop{
+        color: white;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        background-color: $brand-color;
+        background-image: linear-gradient(120deg, $brand-color 0%, $brand-color-dark 100%);
         p{
           text-align: center;
           font-size: 1.3em;
           line-height: 1.5em;
-        }
-      }
-
-      @include media.mediaminmax($middle,$big){
-        font-size: 1.2em;
-        .aboutTop{
-          p{
+          @include media.mediaminmax($middle,$big){
             font-size: 1.5em;
+          }
+          @include media.mediamin($big){
+            font-size: 1.7em;
           }
         }
       }
 
-      @include media.mediamin($big){
-        font-size: 1.3em;
-        .aboutTop{
-          p{
-            font-size: 1.7em;
+      .aboutType{
+        h2,h3,h4,h5,h6{
+          text-decoration: underline;
+          text-decoration-style: solid;
+          text-decoration-color: $brand-color;
+        }
+        ul {
+          font-size: 1.05em;
+          padding-left: 4px;
+          @include media.mediaminmax($middle,$big){
+            font-size: $middle-size - 0.1em;
+          }
+          @include media.mediamin($big){
+            font-size: $big-size - 0.1em;
+          }
+          @include media.mediamin($max){
+            display: block;
+            width: $big;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+
+      .aboutHowto{
+        h4.subTitle {
+          margin: 1em;
+          font-size: 1.0em;
+          text-align: left;
+          @include media.mediamin(510px){
+            margin: 1em 0;
+            text-align: center;
+          }
+          @include media.mediamin($middle){
+            font-size: 1.4rem;
+          }
+          span.hide500{
+            display: none;
+            @include media.mediamin(510px){
+              display: inline;
+            }
+          }
+        }
+        ol{
+          padding-inline-start: 30px;
+          padding-right: 1em;
+          @include media.mediamin($max){
+            display: block;
+            width: $big;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+
+      .aboutTicket{
+        p {
+          line-height: 1.8em;
+          margin-left: 0.2em;
+          @include media.mediamin($max){
+            display: block;
+            width: $big;
+            margin-left: auto;
+            margin-right: auto;
           }
         }
       }
@@ -177,8 +304,7 @@ $brand-color: hsl(188.5, 100%, 40%, 1);
         color : white;
         transition: .3s ease;
         &:hover{
-          background-color : #b7d4e4;
-          color: rgb(136, 86, 223);
+          background-color : $brand-color-action;
           cursor: pointer;
         }
       }
@@ -190,12 +316,10 @@ $brand-color: hsl(188.5, 100%, 40%, 1);
           margin-left: auto;
           margin-right: auto;
         }
-        @include media.mediamin($middle){
-          p{
-            width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-          }
+        p{
+          width: 600px;
+          margin-left: auto;
+          margin-right: auto;
         }
       }
     }
@@ -225,6 +349,7 @@ $brand-color: hsl(188.5, 100%, 40%, 1);
         height: 15rem;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 1em;
       }
       .careerWrapper{
         h2,h3,h4,h5,h6{
@@ -238,16 +363,6 @@ $brand-color: hsl(188.5, 100%, 40%, 1);
           max-width: 600px;
           border-left: solid 10px white;
           border-right: solid 10px white;
-      
-          
-          ul {
-            padding-left: 0;
-            background-color: white;
-            list-style: none;
-            li {
-              list-style: none;
-            }
-          }
         }
 
         @include media.mediamin(616px){
@@ -261,6 +376,76 @@ $brand-color: hsl(188.5, 100%, 40%, 1);
             margin-right: 8px;
             margin-bottom: 8px;
             background-color: $brand-color;
+          }
+        }
+      }
+    }
+
+    .details{
+      margin:  10px 0.5em;
+      line-height: 2em;
+      h3,h4,h5,h6 {
+        text-align: left;
+      }
+      p{
+        line-height: 1.5em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+      }
+      @include media.mediamin($max){
+        display: block;
+        width: $big;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .tickets{
+      .tickets-form{
+        button {
+          margin: 3px;
+          margin-top: 5px;
+        }
+        p{
+          margin-top: 20px;
+        }
+        input,textarea{
+          display: block;
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top : 10px;
+          margin-bottom : 30px;
+          padding : 18px;
+          font-size : 18px;
+          border : 1px solid #dee7ec;
+        }
+        select {
+          display: block;
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .submit{
+          background-color : $brand-color;
+          color : white;
+          transition: .3s ease;
+          &:hover{
+            background-color : $brand-color-action;
+            cursor: pointer;
+          }
+        }
+        @include media.mediamin($middle){
+          input,textarea,select {
+            width : 400px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          p{
+            width: 600px;
+            margin-left: auto;
+            margin-right: auto;
           }
         }
       }
@@ -315,15 +500,16 @@ footer {
       list-style: none;
       display: grid;
       justify-content: center;
-      grid-template-columns:  repeat(2,100px);
+      grid-template-columns:  repeat(2,120px);
       grid-template-rows: auto;
-      grid-column-gap: 70px;
+      grid-column-gap: 30px;
       grid-row-gap: 10px;
       grid-auto-flow: row;
       padding-inline-start: 0px;
       margin: 10px 0;
 
       &>*{
+        width: 120px;
         font-family: "Josefin Sans","游ゴシック体",Yu Gothic,YuGothic,"ヒラギノ角ゴ Pro",Hiragino Kaku Gothic Pro,"メイリオ",Meiryo,sans-serif !important;
         cursor: pointer;
         display: inline-block;
@@ -345,11 +531,17 @@ footer {
     }
   }
 
-  @include media.mediaminmax($small,$middle){
+  @include media.mediamin($small){
+    .footer-links ul{
+      grid-column-gap: 70px;
+    }
+  }
+
+  @include media.mediaminmax($sm,$middle){
     $links: 115px;
     @include setFooterHeight($main,$links,$cr);
     .footer-links ul {
-      grid-template-columns: repeat(3,100px);
+      grid-template-columns: repeat(3,120px);
     }
   }
   // @include media.mediaminmax($middle,$big){
@@ -373,7 +565,6 @@ footer {
       display: flex;
       margin: 0px 20px 10px 20px;
       &> *{
-        width: 100px;
         margin-left: auto;
         margin-right: auto;
       }

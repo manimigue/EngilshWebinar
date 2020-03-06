@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/EngilshWebinar/static/css/main.e16de79b.chunk.css",
-    "main.js": "/EngilshWebinar/static/js/main.e6a4fdd6.chunk.js",
-    "main.js.map": "/EngilshWebinar/static/js/main.e6a4fdd6.chunk.js.map",
+    "main.js": "/EngilshWebinar/static/js/main.1b934461.chunk.js",
+    "main.js.map": "/EngilshWebinar/static/js/main.1b934461.chunk.js.map",
     "runtime-main.js": "/EngilshWebinar/static/js/runtime-main.8c397791.js",
     "runtime-main.js.map": "/EngilshWebinar/static/js/runtime-main.8c397791.js.map",
     "static/css/2.e3028a06.chunk.css": "/EngilshWebinar/static/css/2.e3028a06.chunk.css",
     "static/js/2.779a30bc.chunk.js": "/EngilshWebinar/static/js/2.779a30bc.chunk.js",
     "static/js/2.779a30bc.chunk.js.map": "/EngilshWebinar/static/js/2.779a30bc.chunk.js.map",
     "index.html": "/EngilshWebinar/index.html",
-    "precache-manifest.27234dcfc1052668714085cb59138863.js": "/EngilshWebinar/precache-manifest.27234dcfc1052668714085cb59138863.js",
+    "precache-manifest.1b8354215250fb03efea064a83b2c836.js": "/EngilshWebinar/precache-manifest.1b8354215250fb03efea064a83b2c836.js",
     "service-worker.js": "/EngilshWebinar/service-worker.js",
     "static/css/2.e3028a06.chunk.css.map": "/EngilshWebinar/static/css/2.e3028a06.chunk.css.map",
     "static/css/main.e16de79b.chunk.css.map": "/EngilshWebinar/static/css/main.e16de79b.chunk.css.map",
@@ -24,6 +24,6 @@
     "static/css/2.e3028a06.chunk.css",
     "static/js/2.779a30bc.chunk.js",
     "static/css/main.e16de79b.chunk.css",
-    "static/js/main.e6a4fdd6.chunk.js"
+    "static/js/main.1b934461.chunk.js"
   ]
 }
